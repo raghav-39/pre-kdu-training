@@ -1,0 +1,37 @@
+body {
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h2 {
+    color: #3d3d3d;
+}
+
+.counter {
+    font-size: 24px;
+    font-weight: bold;
+    margin: 10px 0;
+    color: #151616; 
+}
+
+.btns button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin: 5px;
+    cursor: pointer;
+}
+
+.reset button {
+    font-size: 16px;
+    padding: 10px 20px;
+    margin-top: 20px;
+    cursor: pointer;
+    /* background-color: rgb(246, 146, 158); 
+     */
+    
+    /* border: none; */
+}
+
+.reset button:hover {
+    background-color: rgb(116, 106, 106)(98, 255, 0); 
+}
