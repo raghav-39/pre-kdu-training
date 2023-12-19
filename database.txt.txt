@@ -1,0 +1,50 @@
+CREATE DATABASE employee;
+USE employee;
+CREATE TABLE Department(
+    department_id int PRIMARY KEY,
+    department_name varchar
+);
+
+CREATE TABLE Employee(
+    employee_id int PRIMARY KEY,
+    employee_name varchar,
+    salary int,
+    department_id int,
+    FOREIGN KEY(department_id) REFERENCES Department(department_id) 
+);
+
+
+INSERT INTO Department values
+    (1,'chemistry'),
+    (2,'physics'),
+    (3,'maths');
+
+INSERT INTO Employee values
+    (111,'Sanjay',25000,2),
+    (112,'Shweta',27000,1),
+    (113,'Monica',27000,3),
+    (114,'Deepak',28000,3),
+    (115,'Nisha',45000,2),
+    (116,'Raghav',60000,2),
+    (117,'Nakul',60000,1);
+
+
+
+----- QUERIES--------
+
+-- Question--> select employee_id,employee_name and department_name
+SELECT Employee.employee_id,Employee.employee_name,Department.department_name from Employee , Department where Employee.department_id=Department.department_id ;
+
+-- Question--> Write a Query that prints all the employees and their salaries in descending order of their salary
+SELECT employee_name,salary from Employee order by salary DESC;
+
+
+-- Question--> Write a Query that prints the average salary of employees in each department with the department name
+SELECT D.department_name, AVG(E.salary) AS average_salary
+FROM Department D
+JOIN Employee E ON D.department_id = E.department_id
+GROUP BY D.department_id, D.department_name;
+
+
+
+
